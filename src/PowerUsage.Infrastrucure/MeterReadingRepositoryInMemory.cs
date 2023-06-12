@@ -15,8 +15,8 @@ public class MeterReadingRepositoryInMemory
     {
         var readings = _meterReadings
             .Where(r => 
-                r.Timestamp >= window.Start)
-                //&& r.Timestamp <= window.End)
+                r.Timestamp >= window.Start
+                && r.Timestamp <= window.End)
             .ToList();
         return Task.FromResult(readings);
     }
