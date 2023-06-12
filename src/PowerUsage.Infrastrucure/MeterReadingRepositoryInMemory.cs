@@ -13,7 +13,12 @@ public class MeterReadingRepositoryInMemory
 
     public Task<List<MeterReading>> GetReadingsAsync(TimeWindow window)
     {
-        return Task.FromResult(_meterReadings.ToList());
+        var readings = _meterReadings
+            .Where(r => 
+                r.Timestamp >= window.Start)
+                //&& r.Timestamp <= window.End)
+            .ToList();
+        return Task.FromResult(readings);
     }
 
     public Task SaveAsync(MeterReading meterReading)
