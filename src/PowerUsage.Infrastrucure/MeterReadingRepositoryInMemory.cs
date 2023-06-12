@@ -11,6 +11,11 @@ public class MeterReadingRepositoryInMemory
         return Task.FromResult(_meterReadings.ToList());
     }
 
+    public Task<List<MeterReading>> GetReadingsAsync(TimeWindow window)
+    {
+        return Task.FromResult(_meterReadings.ToList());
+    }
+
     public Task SaveAsync(MeterReading meterReading)
     {
         _meterReadings.Add(meterReading);
