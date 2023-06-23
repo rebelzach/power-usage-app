@@ -1,15 +1,57 @@
-﻿
-@* @attribute [RenderModeWebAssembly] *@
+﻿@using PowerUsage.Core.Values;
+@using PowerUsage.Infrastrucure;
+@using PowerUsage.Web.Models;
+
 @attribute [RenderModeServer]
 
-<div class="my-component">
-    This component is defined in the <strong>PowerUsage.Components</strong> library.
-</div>
+@inject MeterReadingRepositoryInMemory MeterReadingRepository
+
+<EditForm Model="_meterReading" OnSubmit="SubmitAsync">
+    <InputDate Type="InputDateType.Time" @bind-Value="_meterReading.Time" DisplayName="Time" />
+    <InputDate Type="InputDateType.Date" @bind-Value="_meterReading.Date" DisplayName="Date" />
+    <InputNumber @bind-Value="_meterReading.TotalKilowattHours" />
+</EditForm>
+
+@foreach (var reading in _readings)
+{
+    <div>
+        @reading.Timestamp.ToString("O"): @reading.TotalKilowattHours.Value
+    </div>
+}
 
 @code {
+    MeterReadingInputModel _meterReading = new();
+
+    IEnumerable<MeterReading> _readings = Enumerable.Empty<MeterReading>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await UpdateReadingsAsync();
+    }
+
+    async Task UpdateReadingsAsync()
+    {
+        _readings = await MeterReadingRepository.GetAllAsync();
+
+        StateHasChanged();
+    }
+
     protected override Task OnAfterRenderAsync(bool firstRender)
     {
-        Console.WriteLine("Rendered");
         return Task.CompletedTask;
+    }
+
+    async Task SubmitAsync()
+    {
+        if (_meterReading is not { Date: not null, Time: not null, TotalKilowattHours: not null })
+        {
+            throw new NullReferenceException("Date, time and reading must have a value");
+        }
+
+        var dateTime = _meterReading.Date.Value.ToDateTime(_meterReading.Time.Value);
+        await MeterReadingRepository.SaveAsync(
+            new MeterReading(dateTime, new TotalKilowattHours(_meterReading.TotalKilowattHours.Value)));
+
+        await UpdateReadingsAsync();
     }
 }

@@ -1,8 +1,10 @@
 
 .net 8 roadmap https://github.com/dotnet/aspnetcore/issues/44984
-- [ ] Enter readings
-  - [X] Create blazor project
-- [ ] Try web assembly and auto render modes
+- [X] Try web assembly and auto render modes (It doesn't work right now.)
   - [X] Create new RCL (Razor Class Library)
-  - [ ] Create new test project
-  - [?] Figure out boot.json loading error
+  - [X] Create new test project
+- [X] Enter readings
+  - [X] Create blazor project
+  - [X] 
+- [ ] Graph readings
+  - [ ] Find a library

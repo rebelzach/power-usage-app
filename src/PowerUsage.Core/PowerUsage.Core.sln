@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerUsage.Infrastrucure", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerUsage.Web", "..\PowerUsage.Web\PowerUsage.Web.csproj", "{9BF0A0C1-3ED1-47C8-B5C6-DAAEDBF2B9CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerUsage.Components", "..\PowerUsage.Components\PowerUsage.Components.csproj", "{B27C706D-51AE-46E3-A825-434B71ECE522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerUsage.Components", "..\PowerUsage.Components\PowerUsage.Components.csproj", "{B27C706D-51AE-46E3-A825-434B71ECE522}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerUsage.United", "..\PowerUsage.United\PowerUsage.United.csproj", "{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "etc", "etc", "{4A0EFA4F-8D53-4ECB-863A-3F0E6940EF8B}"
+	ProjectSection(SolutionItems) = preProject
+		..\UnifiedProject.props = ..\UnifiedProject.props
+		..\UnifiedProject.targets = ..\UnifiedProject.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +45,6 @@ Global
 		{B27C706D-51AE-46E3-A825-434B71ECE522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B27C706D-51AE-46E3-A825-434B71ECE522}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B27C706D-51AE-46E3-A825-434B71ECE522}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
