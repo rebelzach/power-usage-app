@@ -4,4 +4,5 @@
   - [X] Create blazor project
 - [ ] Try web assembly and auto render modes
   - [X] Create new RCL (Razor Class Library)
-  - [ ] Figure out boot.json loading error
+  - [ ] Create new test project
+  - [?] Figure out boot.json loading error

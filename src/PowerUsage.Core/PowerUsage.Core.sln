@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerUsage.Web", "..\PowerU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerUsage.Components", "..\PowerUsage.Components\PowerUsage.Components.csproj", "{B27C706D-51AE-46E3-A825-434B71ECE522}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerUsage.United", "..\PowerUsage.United\PowerUsage.United.csproj", "{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B27C706D-51AE-46E3-A825-434B71ECE522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B27C706D-51AE-46E3-A825-434B71ECE522}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B27C706D-51AE-46E3-A825-434B71ECE522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39FEBBF0-2D91-484E-8015-14EE32DD4A2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
