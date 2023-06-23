@@ -13,11 +13,9 @@
     <Microsoft.AspNetCore.Components.Forms.InputNumber @bind-Value="_meterReading.TotalKilowattHours" />
 </EditForm>
 
-@if (_readings.Any())
-{
-    <AntDesign.Charts.Line @key="_chartData" Data="_chartData" Config="_chartConfig"/>
-}
+<AntDesign.Charts.Line @ref=_chart Config="_chartConfig"/>
 
+<h2>Raw Readings</h2>
 @foreach (var reading in _readings)
 {
     <div>
@@ -26,6 +24,7 @@
 }
 
 @code {
+    AntDesign.Charts.Line _chart = null!;
     MeterReadingInputModel _meterReading = new();
 
     IEnumerable<MeterReading> _readings = Enumerable.Empty<MeterReading>();
@@ -75,6 +74,7 @@
                 totalKwh = r.TotalKilowattHours.Value 
             })
             .ToArray();
+        await _chart.UpdateChart(csData: _chartData);
 
         StateHasChanged();
     }
