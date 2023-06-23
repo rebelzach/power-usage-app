@@ -1,0 +1,15 @@
+﻿
+@* @attribute [RenderModeWebAssembly] *@
+@attribute [RenderModeServer]
+
+<div class="my-component">
+    This component is defined in the <strong>PowerUsage.Components</strong> library.
+</div>
+
+@code {
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("Rendered");
+        return Task.CompletedTask;
+    }
+}
