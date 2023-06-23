@@ -9,6 +9,7 @@
     <link href="PowerUsage.Web.styles.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="favicon.png"/>
     <HeadOutlet></HeadOutlet>
+    <link href="_content/AntDesign/css/ant-design-blazor.css" rel="stylesheet" />
 </head>
 <body>
     <Router AppAssembly="@typeof(App).Assembly">
@@ -23,6 +24,7 @@
             </LayoutView>
         </NotFound>
     </Router>
+    <AntContainer />
 
     <div id="blazor-error-ui">
         <environment include="Staging,Production">
@@ -36,5 +38,8 @@
     </div>
 
     <script src="_framework/blazor.web.js" suppress-error="BL9992"></script>
+    <script src="_content/AntDesign/js/ant-design-blazor.js" suppress-error="BL9992"></script>
+    <script src="https://unpkg.com/@@antv/g2plot@latest/dist/g2plot.min.js" suppress-error="BL9992"></script>
+    <script src="_content/AntDesign.Charts/ant-design-charts-blazor.js" suppress-error="BL9992"></script>
 </body>
 </html>

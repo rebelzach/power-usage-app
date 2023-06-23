@@ -12,7 +12,7 @@ builder.Services.AddRazorComponents()
     .AddServerComponents();
 //.AddWebAssemblyComponents();
 builder.Services.AddScoped<MeterReadingRepositoryInMemory>();
-
+builder.Services.AddAntDesign();
 //builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
